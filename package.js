@@ -1,6 +1,6 @@
 Package.describe({
   name: 'proyk:chrome-push-notification',
-  version: '0.0.1',
+  version: '0.0.2',
   summary: 'Chrome push notifications',
   git: '',
   documentation: 'README.md'
