@@ -2,7 +2,7 @@ self.addEventListener('push', showNotification);
 self.addEventListener('notificationclick', closeNotificationAndOpenWindow);
 
 function showNotification(event) {
-  console.log('Received a push message', event);
+  //console.log('Received a push message', event);
 
   event.waitUntil(
     event.target.registration.pushManager.getSubscription().then(function(subscription) {
@@ -13,7 +13,7 @@ function showNotification(event) {
       // we'll grab some data from an API and use it to populate a notification
       fetch(endpoint, {credentials: 'include'}).then(function(response) {
         if (response.status !== 200) {
-          console.log('Looks like there was a problem. Status Code: ' + response.status);
+          //console.log('Looks like there was a problem. Status Code: ' + response.status);
           throw new Error();
         }
 
@@ -52,8 +52,8 @@ function showNotification(event) {
 
 
 function closeNotificationAndOpenWindow(event) {
-  console.log('event: ', event);
-  console.log('On notification click: ', event.notification.tag);
+  //console.log('event: ', event);
+  //console.log('On notification click: ', event.notification.tag);
   // Android doesn’t close the notification when you click on it
   // See: http://crbug.com/463146
   event.notification.close()
